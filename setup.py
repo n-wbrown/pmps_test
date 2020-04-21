@@ -52,6 +52,7 @@ setup(
     entry_points={
         'console_scripts': [
                 "pmps_run_tests = pmps_test.bin.main:main",
+                "execute_tests = pmps_test.bin.system_tests:main"
             ],
         },
     include_package_data=True,
