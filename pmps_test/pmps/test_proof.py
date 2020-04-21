@@ -2,6 +2,7 @@ import logging
 
 import pytest
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -28,9 +29,9 @@ def test_commandline_args(ams_net_id):
     print(ams_net_id)
     assert ams_net_id == "127.0.0.1.1.1"
 
+
 @pytest.mark.incremental
 class TestClassTests:
-    
     @classmethod
     def setup_class(cls):
         print("print_setup")
