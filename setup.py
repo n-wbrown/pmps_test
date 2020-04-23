@@ -54,6 +54,9 @@ setup(
                 "pmps_run_tests = pmps_test.bin.main:main",
                 "execute_tests = pmps_test.bin.system_tests:main"
             ],
+        'pytest11': [
+                "pmps_test = pmps_test.pytest_plugin",
+            ]
         },
     include_package_data=True,
     package_data={
