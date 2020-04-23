@@ -5,7 +5,6 @@ from os import getcwd
 from textwrap import dedent, fill
 
 import pmps_test
-from ..pmps.conftest import CMDOPT_OPTION
 from ..utils.pytest_wrapper import targeted_pytest
 import pmps_test.pmps
 
@@ -26,7 +25,7 @@ def main(args=None):
     )
 
     top_parser.add_argument(
-        "test_path", type=str, help="Directory containing tests", 
+        "test_path", type=str, help="Directory containing tests", nargs="?",
         default=getcwd()
     )
 

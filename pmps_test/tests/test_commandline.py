@@ -13,3 +13,5 @@ def test_system_tests_main():
             ["pmps_test/pmps", "-k", "test_False"]
         ) == ExitCode(1), \
         "system_tests_main fails to catch a bad test"
+    assert system_tests_main(["--ignore=pmps_test/tests"]) == ExitCode(1), \
+        "system_tests_main fails with path argument"
