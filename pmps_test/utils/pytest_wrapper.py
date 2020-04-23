@@ -14,7 +14,9 @@ def targeted_pytest(target_directory: str,
     if pytest_plugins is not None:
         plugins.extend(pytest_plugins)
 
-    pytest.main(
+    result = pytest.main(
         args=args,
         plugins=plugins,
     )
+
+    return result
