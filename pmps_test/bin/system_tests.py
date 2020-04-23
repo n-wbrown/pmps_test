@@ -3,10 +3,9 @@ import importlib.resources
 import logging
 from textwrap import dedent, fill
 
-import pytest
-
 import pmps_test
 from ..pmps.conftest import CMDOPT_OPTION
+from ..utils.pytest_wrapper import targeted_pytest
 import pmps_test.pmps
 
 logger = logging.getLogger(__name__)
@@ -25,21 +24,17 @@ def main(args=None):
         description=DESCRIPTION,
     )
 
+    top_parser.add_argument("test_path", type=str, help="Directory containing tests")
+
     # unknown_args are not recognized by argparse and will be sent to pytest
     args, unknown_args = top_parser.parse_known_args(args)
 
     with importlib.resources.path(pmps_test.pmps, ".") as p:
         pmps_test_root_dir = p
-
-    pytest_args = [
-        f"{pmps_test_root_dir}",
-        f"{CMDOPT_OPTION}=90",
-    ] + unknown_args
-    pytest_plugins = None
-
-    pytest.main(
-        args=pytest_args,
-        plugins=pytest_plugins,
+    targeted_pytest(
+        target_directory=args.test_path,
+        pytest_args=unknown_args,
+        pytest_plugins=None
     )
 
 
