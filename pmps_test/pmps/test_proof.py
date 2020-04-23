@@ -14,6 +14,11 @@ def test_False():
     assert False
 
 
+def test_fixture(sample_fixture):
+    print(sample_fixture())
+    assert False
+
+
 def test_passed_args(cmdopt):
     """
     Example test using an argument passed programatically
