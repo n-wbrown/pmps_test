@@ -1,7 +1,7 @@
 import pytest
 
-AMS_NET_ID_OPTION = "--ams_net_id"
-CMDOPT_OPTION = "--cmdopt"
+AMS_NET_ID_OPTION = "--ams_net_id_old"
+CMDOPT_OPTION = "--cmdopt_old"
 
 
 def pytest_load_initial_conftests(args, early_config, parser):

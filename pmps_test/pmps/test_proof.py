@@ -15,8 +15,9 @@ def test_False():
 
 
 def test_fixture(sample_fixture):
-    print(sample_fixture())
-    assert False
+    response = sample_fixture
+    print(response)
+    assert response == "sample_fixture"
 
 
 def test_passed_args(cmdopt):

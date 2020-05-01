@@ -29,3 +29,7 @@ def ams_net_id(request):
     else:
         return request.config.getoption(AMS_NET_ID_OPTION)
      
+
+@pytest.fixture
+def sample_fixture():
+    return "sample_fixture"
