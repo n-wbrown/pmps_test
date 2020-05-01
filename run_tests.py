@@ -11,7 +11,12 @@ from logging.handlers import RotatingFileHandler
 if __name__ == '__main__':
     # Show output results from every test function
     # Show the message output for skipped and expected failures
-    args = ['-vrxs', '--ignore=pmps_test/pmps']
+    args = [
+        'pmps_test/tests',
+        '-vrxs',
+        '--ignore=pmps_test/pmps',
+        '--ignore=pmps_test/pytest_plugin'
+    ]
 
     # Add extra arguments
     if len(sys.argv) > 1:
