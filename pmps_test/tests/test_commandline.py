@@ -5,7 +5,9 @@ from pmps_test.bin.system_tests import main as system_tests_main
 
 
 def test_system_tests_main():
-    # Confirm functionality of the main.system_tests_main commandline utility
+    """
+    Confirm functionality of the main.system_tests_main commandline utility
+    """
     assert system_tests_main(
             ["pmps_test/pmps", "-k", "test_True"]
         ) == ExitCode(0), \
@@ -18,10 +20,11 @@ def test_system_tests_main():
     #     "system_tests_main fails with path argument"
 
 
-# @pytest.mark.skip(reason="Test pending plugin development")
 def test_plugin_fixture():
+    """
+    Confirm targeted test is able to use fixtures created in the plugin. 
+    """
     assert system_tests_main(
             ["pmps_test/pmps", "-k", "test_fixture"]
         ) == ExitCode(0), \
         "system_tests_main is not accessing the plugin"
-
