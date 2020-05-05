@@ -14,8 +14,7 @@ if __name__ == '__main__':
     args = [
         'pmps_test/tests',
         '-vrxs',
-        '--ignore=pmps_test/pmps',
-        '--ignore=pmps_test/pytest_plugin'
+        '--ignore-glob=*meta*'
     ]
 
     # Add extra arguments
