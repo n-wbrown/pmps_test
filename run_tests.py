@@ -14,7 +14,7 @@ if __name__ == '__main__':
     args = [
         'pmps_test/tests',
         '-vrxs',
-        '--ignore-glob=*meta*'
+        '--ignore=pmps_test/tests/plugin_meta'
     ]
 
     # Add extra arguments
