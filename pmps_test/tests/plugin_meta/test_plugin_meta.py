@@ -1,4 +1,4 @@
 import pytest 
 
-def test_fake():
-    assert True
+def test_load_static_plugin_fixture():
+    pass
