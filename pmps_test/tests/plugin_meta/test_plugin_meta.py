@@ -1,4 +1,4 @@
 import pytest 
 
-def test_load_static_plugin_fixture():
+def test_load_static_plugin_fixture(xyz):
     pass
