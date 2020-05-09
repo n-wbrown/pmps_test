@@ -24,12 +24,12 @@ def pytest_addoption(parser):
     )
 
     parser.addini(
-        BASE_PV_OPTION.strip("-"), default=None,
-        help="Provide PVs to be tested."
+        BASE_PV_OPTION.strip("-"), default=None, type='linelist',
+        help="Provide PVs to be tested.",
     )
     parser.addoption(
-        BASE_PV_OPTION, action="store", default=None,
-        help="Provide PVs to be tested. Supersedes the .ini file."
+        BASE_PV_OPTION, action="store", default=None,  nargs="*",
+        help="Provide PVs to be tested. Supersedes the .ini file.",
     )
 
 def pytest_load_initial_conftests(early_config, parser, args):

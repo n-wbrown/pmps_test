@@ -14,6 +14,7 @@ def test_base_pv_multiple_args(base_pv):
     Test that a variable number of PVs can be passed 
     """
     result = base_pv
+    print(result)
     assert type(result) is dict, "bad type returned"
     assert len(result) is 3, "Dictionary has incorrect length"
     assert result['pv1'] == "AB1C0:TEST"

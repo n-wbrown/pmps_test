@@ -13,5 +13,12 @@ def test_base_pv_no_arg(testdir):
 
 def test_base_pv_multi_arg(testdir):
     testdir.copy_example("test_plugin_meta.py")
-    result = testdir.runpytest("-k","test_base_pv_multiple_args")
+    result = testdir.runpytest(
+        "-k",
+        "-s",
+        "test_base_pv_multiple_args",
+        "--pv pv1=AB1C0:TEST",
+        "pv2=DE1F1:DEBUG",
+        "spare_PV=GH2I3:DEPLOY",
+    )
     result.assert_outcomes(passed=1)
